@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block head %}
+  {{ super() }}
+     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.css">
+{% endblock %}
+
+
+
+{% block app_content %}
+    <h1>Alunos</h1>
+   <table class="table table-hover">
+        <tr>
+            <td width="70px">
+                Juca
+            </td>
+            <td>
+                Silca
+            </td>
+        </tr>
+   <tr>
+            <td width="70px">
+                Juca
+            </td>
+            <td>
+                Silca
+            </td>
+        </tr>
+   <tr>
+            <td width="70px">
+                Juca
+            </td>
+            <td>
+                Silca
+            </td>
+        </tr>
+   <tr>
+            <td width="70px">
+                Juca
+            </td>
+            <td>
+                Silca
+            </td>
+        </tr>
+    </table>
+
+
+{#    Exemplo obtido em https://github.com/bambooom/flask-bootstrap-table#}
+
+
+    <table
+      id="table"
+      data-toggle="true"
+      data-toolbar="#toolbar"
+      data-search="true"
+      data-show-columns="true"
+      data-pagination="true"
+      data-height="500">
+    </table>
+
+
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+   <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.11.1/bootstrap-table.min.js"></script>
+    <script type='text/javascript'>
+    $(window).load(function(){
+      var data = {{data|tojson}};
+      var columns = {{columns|tojson}};
+      $(function() {
+        $('#table').bootstrapTable({
+          data: data,
+          columns: columns,
+        });
+      });
+    });
+  </script>
+{% endblock %}

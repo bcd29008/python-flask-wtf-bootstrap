@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     {% if title %}
+        <title>{{ title }}</title>
+     {% else %}
+        <title>BCD29008 - IFSC - São José</title>
+     {% endif %}
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css') }}">
+
+</head>
+<body>
+<H1><a href="/">Página inicial</a></H1>
+<HR>
+ {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+{% block content %} {% endblock %}
+
+</body>
+</html>

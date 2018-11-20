@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Olá {{ user }}</h2>
+
+    <p> Você se autenticou com sucesso!</p>
+
+    <p><a href="{{ url_for('painel') }}">Ver seus dados pessoais</a>
+
+    <p><a href="{{ url_for('logout') }}">Encerrar sessão</a>
+
+{% endblock %}

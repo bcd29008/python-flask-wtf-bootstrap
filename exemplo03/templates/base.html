@@ -1,0 +1,38 @@
+{% extends 'bootstrap/base.html' %}
+
+{% if title %}
+        <title>{{ title }}</title>
+{% else %}
+        <title>BCD29008 - IFSC - São José</title>
+{% endif %}
+
+{% block navbar %}
+    {{nav.meunavbar.render()}}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+{#        Conteúdo das páginas ficarão aqui    #}
+        {% block app_content %}
+
+        {% endblock %}
+
+
+    </div>
+
+{% endblock %}
+
+
+
+
+</html>

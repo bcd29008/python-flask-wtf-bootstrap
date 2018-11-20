@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <p>Login: {{ user.username }}</p>
+    <p>Email: {{ user.email }}</p>
+
+
+    <p><a href="{{ url_for('logout') }}">Encerrar sessão</a>
+
+{% endblock %}
